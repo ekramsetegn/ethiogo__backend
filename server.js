@@ -13,10 +13,14 @@ const contactRoutes = require('./routes/contactRoutes');
 
 const app = express(); 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000', 
+    'https://ethiogo-frontend.vercel.app'
+  ],
   credentials: true,
-  exposedHeaders: ['Content-Disposition'] 
+  exposedHeaders: ['Content-Disposition']
 }));
+
 
 app.use(express.json());
 
